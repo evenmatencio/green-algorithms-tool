@@ -497,16 +497,28 @@ hr {
 
 .mini-box {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     padding-bottom: 10px;
 } 
 
+/* We target the top row of mini-box(s) */
+.mini-box:nth-of-type(n-3) {
+    flex-direction: column;
+}
+
+/* Still the top row, for AI view distribution between inference and training */
 .mini-box-main-content {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
+
+/* We target the below row of mini-box(s) */
+.mini-box:nth-of-type(n+3) {
+    flex-direction: row;
+}
+
 
 .detailed-metric-container {
     width: 100%;

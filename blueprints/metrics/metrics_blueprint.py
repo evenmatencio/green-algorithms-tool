@@ -11,6 +11,7 @@ def get_metrics_blueprint(
         id_prefix: str,
         energy_needed_details: html.Div = html.Div(style={"display": "none"}),
         carbon_footprint_details: html.Div = html.Div(style={"display": "none"}),
+        abiotic_resources_details: html.Div = html.Div(style={"display": "none"}),
     ):
 
     results_blueprint = DashBlueprint(
@@ -28,7 +29,8 @@ def get_metrics_blueprint(
 
     results_blueprint.layout = get_green_algo_metrics_layout(
             carbon_footprint_details,
-            energy_needed_details
+            energy_needed_details,
+            abiotic_resources_details
         )
 
 

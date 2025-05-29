@@ -23,6 +23,7 @@ image_dir = os.path.join('assets/images')
 def get_green_algo_metrics_layout(
         carbon_footprint_details: html.Div,
         energy_needed_details: html.Div,
+        abiotic_resources_details: html.Div,
 ):
     return html.Div(
         [
@@ -102,6 +103,44 @@ def get_green_algo_metrics_layout(
                     ),
                     
                     energy_needed_details,
+                ],
+                className="container mini-box"
+            ),
+
+            #### ABIOTIC RESOURCES DEPLETION ####
+
+            html.Div(
+                [
+                    html.Div(
+                        [
+                            html.Img(
+                                src=os.path.join(image_dir, 'logo_pickaxe_1.svg'),
+                                id="logo_pickaxe",
+                                className="style-icon",
+                                style={
+                                    'margin': '0px',
+                                    'padding': '15px'
+                                },
+                            ),
+
+                            html.Div(
+                                [
+                                    loading_wrapper(html.Div(
+                                        "0.05 kgSb eq",
+                                        id="abiotic_text",
+                                    )),
+
+                                    html.P(
+                                        "Abiotic resources depletion",
+                                    )
+                                ],
+                                className='caption-icons'
+                            ),
+                        ],
+                        className='mini-box-main-content'
+                    ),
+                    
+                    abiotic_resources_details,
                 ],
                 className="container mini-box"
             ),
