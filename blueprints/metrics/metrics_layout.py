@@ -31,209 +31,340 @@ def get_green_algo_metrics_layout(
 
             dcc.Store(id='base_results'),
 
-            #### CARBON EMISSIONS ####
+            ### MANUFACTURING IMPACTS ###
+
+            html.Div(
+                [
+                    html.Div(
+                        [
+                            html.H3('Embodied impacts'),
+
+                            html.Div(
+                                [
+                                    html.Div('i', className='tooltip-icon'),
+                                    html.P(
+                                        "Embodied impacts are genetared by the extraction and manufacturing " \
+                                        "phases of the hardaware life cycle.",
+                                        className='tooltip-text'
+                                    ),
+                                ],
+                                className='tooltip',
+                            ),
+                        ],
+                        className='metrics-header'
+                    ),
+
+                    html.Div(
+                        [
+                            #### CARBON EMISSIONS ####
+                            
+                            html.Div(
+                                [
+                                    html.Div(
+                                        [
+
+                                            html.Img(
+                                                src=os.path.join(image_dir, 'logo_co2.svg'),
+                                                id="logo_co2",
+                                                className="style-icon",
+                                                style={
+                                                    'margin-top': '-7px',
+                                                    'margin-bottom': '7px'
+                                                },
+                                            ),
+
+                                            html.Div(
+                                                [
+                                                    loading_wrapper(html.Div(
+                                                        id="carbonEmissions_text",
+                                                    )),
+
+                                                    html.P(
+                                                        "Carbon footprint",
+                                                    )
+                                                ],
+                                                className='caption-icons'
+                                            ),
+                                        ],
+                                        className='mini-box-main-content'
+
+                                    ),
+
+                                    carbon_footprint_details,
+                                ],
+                                className="container mini-box"
+                            ),
+                                
+                            #### ABIOTIC RESOURCES DEPLETION ####
+
+                            html.Div(
+                                [
+                                    html.Div(
+                                        [
+                                            html.Img(
+                                                src=os.path.join(image_dir, 'logo_pickaxe_1.svg'),
+                                                id="logo_pickaxe",
+                                                className="style-icon",
+                                                style={
+                                                    'margin': '0px',
+                                                    'padding': '15px'
+                                                },
+                                            ),
+
+                                            html.Div(
+                                                [
+                                                    loading_wrapper(html.Div(
+                                                        "0.05 kgSb eq",
+                                                        id="abiotic_text",
+                                                    )),
+
+                                                    html.P(
+                                                        "Abiotic resources depletion",
+                                                    )
+                                                ],
+                                                className='caption-icons'
+                                            ),
+                                        ],
+                                        className='mini-box-main-content'
+                                    ),
+                                    
+                                    abiotic_resources_details,
+                                ],
+                                className="container mini-box"
+                            ),
+                        ],
+                        className='mini-boxes'
+                    ),
+                ],
+                className='container'
+            ),
+
+            ### USAGE IMPACTS ###
+
+            html.Div(
+                [
+                    html.Div(
+                        [
+                            html.H3('Operational impacts'),
+
+                            html.Div(
+                                [
+                                    html.Div('i', className='tooltip-icon'),
+                                    html.P(
+                                        "Operational or dynamic impacts are genetared by the usage " \
+                                        "phase of the hardaware life cycle.",
+                                        className='tooltip-text'
+                                    ),
+                                ],
+                                className='tooltip',
+                            ),
+                        ],
+                        className='metrics-header'
+                    ),
+
+                    html.Div(
+                        [
+                            #### ELECTRICITY CONSUMPTION ####
+
+                            html.Div(
+                                [
+                                    html.Div(
+                                        [
+                                            html.Img(
+                                                src=os.path.join(image_dir, 'logo_power_1.svg'),
+                                                id="logo_power",
+                                                className="style-icon",
+                                                style={
+                                                    'margin': '0px',
+                                                    'padding': '15px'
+                                                },
+                                            ),
+
+                                            html.Div(
+                                                [
+                                                    loading_wrapper(html.Div(
+                                                        id="energy_text",
+                                                    )),
+
+                                                    html.P(
+                                                        "Energy needed",
+                                                    )
+                                                ],
+                                                className='caption-icons'
+                                            ),
+                                        ],
+                                        className='mini-box-main-content'
+                                    ),
+                                    
+                                    energy_needed_details,
+                                ],
+                                className="container mini-box"
+                            ),
+
+                            #### CARBON EMISSIONS ####
+                            
+                            html.Div(
+                                [
+                                    html.Div(
+                                        [
+                                            html.Img(
+                                                src=os.path.join(image_dir, 'logo_co2.svg'),
+                                                id="logo_co2",
+                                                className="style-icon",
+                                                style={
+                                                    'margin-top': '-7px',
+                                                    'margin-bottom': '7px'
+                                                },
+                                            ),
+
+                                            html.Div(
+                                                [
+                                                    loading_wrapper(html.Div(
+                                                        id="carbonEmissions_text",
+                                                    )),
+
+                                                    html.P(
+                                                        "Carbon footprint",
+                                                    )
+                                                ],
+                                                className='caption-icons'
+                                            ),
+                                        ],
+                                        className='mini-box-main-content'
+
+                                    ),
+
+                                    carbon_footprint_details,
+                                ],
+                                className="container mini-box"
+                            ),
+                        ],
+                        className='mini-boxes',
+                    )
+                ],
+                className='container',
+            ),
             
+            ### EQUIVALENTS AND TOTAL ###
+
             html.Div(
                 [
                     html.Div(
                         [
-
-                            html.Img(
-                                src=os.path.join(image_dir, 'logo_co2.svg'),
-                                id="logo_co2",
-                                className="style-icon",
-                                style={
-                                    'margin-top': '-7px',
-                                    'margin-bottom': '7px'
-                                },
-                            ),
+                            html.H3('Some equivalents'),
 
                             html.Div(
                                 [
-                                    loading_wrapper(html.Div(
-                                        id="carbonEmissions_text",
-                                    )),
-
+                                    html.Div('i', className='tooltip-icon'),
                                     html.P(
-                                        "Carbon footprint",
-                                    )
+                                        "Correspond to ???.",
+                                        className='tooltip-text'
+                                    ),
                                 ],
-                                className='caption-icons'
+                                className='tooltip',
                             ),
                         ],
-                        className='mini-box-main-content'
-
+                        className='metrics-header'
                     ),
 
-                    carbon_footprint_details,
-                ],
-                className="container mini-box"
-            ),
-
-            #### ELECTRICITY CONSUMPTION ####
-
-            html.Div(
-                [
                     html.Div(
                         [
-                            html.Img(
-                                src=os.path.join(image_dir, 'logo_power_1.svg'),
-                                id="logo_power",
-                                className="style-icon",
-                                style={
-                                    'margin': '0px',
-                                    'padding': '15px'
-                                },
-                            ),
+                            #### TREE ABSOPRTION EQUIVALENT ####
 
                             html.Div(
                                 [
-                                    loading_wrapper(html.Div(
-                                        id="energy_text",
-                                    )),
+                                    html.Img(
+                                        src=os.path.join(image_dir, 'logo_tree_1.svg'),
+                                        id="logo_tree",
+                                        className="style-icon",
+                                        style={
+                                            'padding': '15px'
+                                        },
+                                    ),
 
-                                    html.P(
-                                        "Energy needed",
+                                    html.Div(
+                                        [
+                                            loading_wrapper(html.Div(
+                                                id="treeMonths_text",
+                                            )),
+
+                                            html.P(
+                                                "Carbon sequestration"
+                                            )
+                                        ],
+                                        className='caption-icons'
                                     )
+
                                 ],
-                                className='caption-icons'
+                                className="container mini-box"
                             ),
-                        ],
-                        className='mini-box-main-content'
-                    ),
-                    
-                    energy_needed_details,
-                ],
-                className="container mini-box"
-            ),
 
-            #### ABIOTIC RESOURCES DEPLETION ####
-
-            html.Div(
-                [
-                    html.Div(
-                        [
-                            html.Img(
-                                src=os.path.join(image_dir, 'logo_pickaxe_1.svg'),
-                                id="logo_pickaxe",
-                                className="style-icon",
-                                style={
-                                    'margin': '0px',
-                                    'padding': '15px'
-                                },
-                            ),
+                            #### CAR KILOMETERS EQUIVALENT ####
 
                             html.Div(
                                 [
-                                    loading_wrapper(html.Div(
-                                        "0.05 kgSb eq",
-                                        id="abiotic_text",
-                                    )),
+                                    html.Img(
+                                        src=os.path.join(image_dir, 'logo_car_3.svg'),
+                                        id="logo_car",
+                                        className="style-icon",
+                                        style={
+                                            'padding': '13px'
+                                        },
+                                    ),
 
-                                    html.P(
-                                        "Abiotic resources depletion",
+                                    html.Div(
+                                        [
+                                            loading_wrapper(html.Div(
+                                                id="driving_text",
+                                            )),
+
+                                            html.P(
+                                                "in a passenger car",
+                                            )
+                                        ],
+                                        className='caption-icons'
                                     )
                                 ],
-                                className='caption-icons'
+                                className="container mini-box"
+                            ),
+
+                            #### PLANE TRIPS EQUIVALENT ####
+
+                            html.Div(
+                                [
+                                    html.Img(
+                                        src=os.path.join(image_dir, 'logo_plane_1.svg'),
+                                        id="logo_plane",
+                                        className="style-icon",
+                                        style={
+                                            'padding': '4px'
+                                        },
+                                    ),
+
+                                    html.Div(
+                                        [
+                                            loading_wrapper(html.Div(
+                                                id="flying_text",
+                                            )),
+
+                                            html.P(
+                                                id="flying_label",
+                                            ),
+                                        ],
+                                        className='caption-icons'
+                                    )
+                                ],
+                                className="container mini-box"
                             ),
                         ],
-                        className='mini-box-main-content'
+                        className='mini-boxes'
                     ),
-                    
-                    abiotic_resources_details,
                 ],
-                className="container mini-box"
-            ),
+                className='container'
 
-            #### TREE ABSOPRTION EQUIVALENT ####
-
-            html.Div(
-                [
-                    html.Img(
-                        src=os.path.join(image_dir, 'logo_tree_1.svg'),
-                        id="logo_tree",
-                        className="style-icon",
-                        style={
-                            'padding': '15px'
-                        },
-                    ),
-
-                    html.Div(
-                        [
-                            loading_wrapper(html.Div(
-                                id="treeMonths_text",
-                            )),
-
-                            html.P(
-                                "Carbon sequestration"
-                            )
-                        ],
-                        className='caption-icons'
-                    )
-
-                ],
-                className="container mini-box"
-            ),
-
-            #### CAR KILOMETERS EQUIVALENT ####
-
-            html.Div(
-                [
-                    html.Img(
-                        src=os.path.join(image_dir, 'logo_car_3.svg'),
-                        id="logo_car",
-                        className="style-icon",
-                        style={
-                            'padding': '13px'
-                        },
-                    ),
-
-                    html.Div(
-                        [
-                            loading_wrapper(html.Div(
-                                id="driving_text",
-                            )),
-
-                            html.P(
-                                "in a passenger car",
-                            )
-                        ],
-                        className='caption-icons'
-                    )
-                ],
-                className="container mini-box"
-            ),
-
-            #### PLANE TRIPS EQUIVALENT ####
-
-            html.Div(
-                [
-                    html.Img(
-                        src=os.path.join(image_dir, 'logo_plane_1.svg'),
-                        id="logo_plane",
-                        className="style-icon",
-                        style={
-                            'padding': '4px'
-                        },
-                    ),
-
-                    html.Div(
-                        [
-                            loading_wrapper(html.Div(
-                                id="flying_text",
-                            )),
-
-                            html.P(
-                                id="flying_label",
-                            ),
-                        ],
-                        className='caption-icons'
-                    )
-                ],
-                className="container mini-box"
             ),
         ],
-        className='super-section mini-boxes'
+        className='super-section metrics'
     )
 
 
