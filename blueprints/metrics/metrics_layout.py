@@ -32,6 +32,111 @@ def get_green_algo_metrics_layout(
 
             dcc.Store(id='base_results'),
 
+            ### USAGE IMPACTS ###
+
+            html.Div(
+                [
+                    html.Div(
+                        [
+                            html.H3('Operational impacts'),
+
+                            html.Div(
+                                [
+                                    html.Div('i', className='tooltip-icon'),
+                                    html.P(
+                                        "Operational or dynamic impacts are genetared by the usage " \
+                                        "phase of the hardaware life cycle.",
+                                        className='tooltip-text'
+                                    ),
+                                ],
+                                className='tooltip',
+                            ),
+                        ],
+                        className='metrics-header'
+                    ),
+
+                    html.Div(
+                        [
+                            #### ELECTRICITY CONSUMPTION ####
+
+                            html.Div(
+                                [
+                                    html.Div(
+                                        [
+                                            html.Img(
+                                                src=os.path.join(image_dir, 'logo_power_1.svg'),
+                                                id="logo_power",
+                                                className="style-icon",
+                                                style={
+                                                    'margin-top': '-10px',
+                                                    'padding': '10px'
+                                                },
+                                            ),
+
+                                            html.Div(
+                                                [
+                                                    loading_wrapper(html.Div(
+                                                        id="energy_text",
+                                                    )),
+
+                                                    html.P(
+                                                        "Energy needed",
+                                                    )
+                                                ],
+                                                className='caption-icons'
+                                            ),
+                                        ],
+                                        className='mini-box-main-content'
+                                    ),
+                                    
+                                    energy_needed_details,
+                                ],
+                                className="container mini-box"
+                            ),
+
+                            #### CARBON EMISSIONS ####
+                            
+                            html.Div(
+                                [
+                                    html.Div(
+                                        [
+                                            html.Img(
+                                                src=os.path.join(image_dir, 'logo_co2.svg'),
+                                                id="logo_co2",
+                                                className="style-icon",
+                                                style={
+                                                    'margin-top': '-7px',
+                                                    'margin-bottom': '7px'
+                                                },
+                                            ),
+
+                                            html.Div(
+                                                [
+                                                    loading_wrapper(html.Div(
+                                                        id="carbonEmissions_text",
+                                                    )),
+
+                                                    html.P(
+                                                        "Carbon footprint",
+                                                    )
+                                                ],
+                                                className='caption-icons'
+                                            ),
+                                        ],
+                                        className='mini-box-main-content'
+                                    ),
+
+                                    dynamic_carbon_footprint_details,
+                                ],
+                                className="container mini-box"
+                            ),
+                        ],
+                        className='mini-boxes',
+                    )
+                ],
+                className='container',
+            ),
+
             ### MANUFACTURING IMPACTS ###
 
             html.Div(
@@ -140,113 +245,8 @@ def get_green_algo_metrics_layout(
                 ],
                 className='container'
             ),
-
-            ### USAGE IMPACTS ###
-
-            html.Div(
-                [
-                    html.Div(
-                        [
-                            html.H3('Operational impacts'),
-
-                            html.Div(
-                                [
-                                    html.Div('i', className='tooltip-icon'),
-                                    html.P(
-                                        "Operational or dynamic impacts are genetared by the usage " \
-                                        "phase of the hardaware life cycle.",
-                                        className='tooltip-text'
-                                    ),
-                                ],
-                                className='tooltip',
-                            ),
-                        ],
-                        className='metrics-header'
-                    ),
-
-                    html.Div(
-                        [
-                            #### ELECTRICITY CONSUMPTION ####
-
-                            html.Div(
-                                [
-                                    html.Div(
-                                        [
-                                            html.Img(
-                                                src=os.path.join(image_dir, 'logo_power_1.svg'),
-                                                id="logo_power",
-                                                className="style-icon",
-                                                style={
-                                                    'margin-top': '-10px',
-                                                    'padding': '10px'
-                                                },
-                                            ),
-
-                                            html.Div(
-                                                [
-                                                    loading_wrapper(html.Div(
-                                                        id="energy_text",
-                                                    )),
-
-                                                    html.P(
-                                                        "Energy needed",
-                                                    )
-                                                ],
-                                                className='caption-icons'
-                                            ),
-                                        ],
-                                        className='mini-box-main-content'
-                                    ),
-                                    
-                                    energy_needed_details,
-                                ],
-                                className="container mini-box"
-                            ),
-
-                            #### CARBON EMISSIONS ####
-                            
-                            html.Div(
-                                [
-                                    html.Div(
-                                        [
-                                            html.Img(
-                                                src=os.path.join(image_dir, 'logo_co2.svg'),
-                                                id="logo_co2",
-                                                className="style-icon",
-                                                style={
-                                                    'margin-top': '-7px',
-                                                    'margin-bottom': '7px'
-                                                },
-                                            ),
-
-                                            html.Div(
-                                                [
-                                                    loading_wrapper(html.Div(
-                                                        id="carbonEmissions_text",
-                                                    )),
-
-                                                    html.P(
-                                                        "Carbon footprint",
-                                                    )
-                                                ],
-                                                className='caption-icons'
-                                            ),
-                                        ],
-                                        className='mini-box-main-content'
-                                    ),
-
-                                    dynamic_carbon_footprint_details,
-                                ],
-                                className="container mini-box"
-                            ),
-                        ],
-                        className='mini-boxes',
-                    )
-                ],
-                className='container',
-            ),
             
-            ### EQUIVALENTS AND TOTAL ###
+            ### EQUIVALENTS ###
 
             html.Div(
                 [
