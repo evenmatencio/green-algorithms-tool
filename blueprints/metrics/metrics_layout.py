@@ -21,7 +21,8 @@ image_dir = os.path.join('assets/images')
 
 
 def get_green_algo_metrics_layout(
-        carbon_footprint_details: html.Div,
+        embodied_carbon_footprint_details: html.Div,
+        dynamic_carbon_footprint_details: html.Div,
         energy_needed_details: html.Div,
         abiotic_resources_details: html.Div,
 ):
@@ -76,7 +77,8 @@ def get_green_algo_metrics_layout(
                                             html.Div(
                                                 [
                                                     loading_wrapper(html.Div(
-                                                        id="carbonEmissions_text",
+                                                        "XX gCO2e",
+                                                        id="embodied_carbonEmissions_text",
                                                     )),
 
                                                     html.P(
@@ -90,7 +92,7 @@ def get_green_algo_metrics_layout(
 
                                     ),
 
-                                    carbon_footprint_details,
+                                    embodied_carbon_footprint_details,
                                 ],
                                 className="container mini-box"
                             ),
@@ -106,7 +108,7 @@ def get_green_algo_metrics_layout(
                                                 id="logo_pickaxe",
                                                 className="style-icon",
                                                 style={
-                                                    'margin': '0px',
+                                                    'margin-top': '-7px',
                                                     'padding': '15px'
                                                 },
                                             ),
@@ -114,7 +116,7 @@ def get_green_algo_metrics_layout(
                                             html.Div(
                                                 [
                                                     loading_wrapper(html.Div(
-                                                        "0.05 kgSb eq",
+                                                        "XX kgSb eq",
                                                         id="abiotic_text",
                                                     )),
 
@@ -175,8 +177,8 @@ def get_green_algo_metrics_layout(
                                                 id="logo_power",
                                                 className="style-icon",
                                                 style={
-                                                    'margin': '0px',
-                                                    'padding': '15px'
+                                                    'margin-top': '-10px',
+                                                    'padding': '10px'
                                                 },
                                             ),
 
@@ -231,10 +233,9 @@ def get_green_algo_metrics_layout(
                                             ),
                                         ],
                                         className='mini-box-main-content'
-
                                     ),
 
-                                    carbon_footprint_details,
+                                    dynamic_carbon_footprint_details,
                                 ],
                                 className="container mini-box"
                             ),
@@ -257,7 +258,7 @@ def get_green_algo_metrics_layout(
                                 [
                                     html.Div('i', className='tooltip-icon'),
                                     html.P(
-                                        "Correspond to ???.",
+                                        "Currently: dynamic carbon footprint equivalents.",
                                         className='tooltip-text'
                                     ),
                                 ],
@@ -273,28 +274,34 @@ def get_green_algo_metrics_layout(
 
                             html.Div(
                                 [
-                                    html.Img(
-                                        src=os.path.join(image_dir, 'logo_tree_1.svg'),
-                                        id="logo_tree",
-                                        className="style-icon",
-                                        style={
-                                            'padding': '15px'
-                                        },
-                                    ),
-
                                     html.Div(
                                         [
-                                            loading_wrapper(html.Div(
-                                                id="treeMonths_text",
-                                            )),
 
-                                            html.P(
-                                                "Carbon sequestration"
+                                            html.Img(
+                                                src=os.path.join(image_dir, 'logo_tree_1.svg'),
+                                                id="logo_tree",
+                                                className="style-icon",
+                                                style={
+                                                    'margin-top': '-7px',
+                                                    'padding': '10px'
+                                                },
+                                            ),
+
+                                            html.Div(
+                                                [
+                                                    loading_wrapper(html.Div(
+                                                        id="treeMonths_text",
+                                                    )),
+
+                                                    html.P(
+                                                        "Carbon sequestration"
+                                                    )
+                                                ],
+                                                className='caption-icons'
                                             )
                                         ],
-                                        className='caption-icons'
-                                    )
-
+                                        className='mini-box-main-content'
+                                    ),
                                 ],
                                 className="container mini-box"
                             ),
@@ -303,27 +310,33 @@ def get_green_algo_metrics_layout(
 
                             html.Div(
                                 [
-                                    html.Img(
-                                        src=os.path.join(image_dir, 'logo_car_3.svg'),
-                                        id="logo_car",
-                                        className="style-icon",
-                                        style={
-                                            'padding': '13px'
-                                        },
-                                    ),
-
                                     html.Div(
                                         [
-                                            loading_wrapper(html.Div(
-                                                id="driving_text",
-                                            )),
+                                            html.Img(
+                                                src=os.path.join(image_dir, 'logo_car_3.svg'),
+                                                id="logo_car",
+                                                className="style-icon",
+                                                style={
+                                                    'margin-top': '-7px',
+                                                    'padding': '10px'
+                                                },
+                                            ),
 
-                                            html.P(
-                                                "in a passenger car",
+                                            html.Div(
+                                                [
+                                                    loading_wrapper(html.Div(
+                                                        id="driving_text",
+                                                    )),
+
+                                                    html.P(
+                                                        "in a passenger car",
+                                                    )
+                                                ],
+                                                className='caption-icons'
                                             )
                                         ],
-                                        className='caption-icons'
-                                    )
+                                        className='mini-box-main-content'
+                                    ),
                                 ],
                                 className="container mini-box"
                             ),
@@ -332,35 +345,43 @@ def get_green_algo_metrics_layout(
 
                             html.Div(
                                 [
-                                    html.Img(
-                                        src=os.path.join(image_dir, 'logo_plane_1.svg'),
-                                        id="logo_plane",
-                                        className="style-icon",
-                                        style={
-                                            'padding': '4px'
-                                        },
-                                    ),
-
                                     html.Div(
                                         [
-                                            loading_wrapper(html.Div(
-                                                id="flying_text",
-                                            )),
-
-                                            html.P(
-                                                id="flying_label",
+                                            html.Img(
+                                                src=os.path.join(image_dir, 'logo_plane_1.svg'),
+                                                id="logo_plane",
+                                                className="style-icon",
+                                                style={
+                                                    'margin-top': '-20px',
+                                                    'margin-bottom': '-5px',
+                                                    'padding': '0px',
+                                                },
                                             ),
+
+                                            html.Div(
+                                                [
+                                                    loading_wrapper(html.Div(
+                                                        id="flying_text",
+                                                    )),
+
+                                                    html.P(
+                                                        id="flying_label",
+                                                    ),
+                                                ],
+                                                className='caption-icons'
+                                            )
                                         ],
-                                        className='caption-icons'
+                                        className='mini-box-main-content',
                                     )
                                 ],
                                 className="container mini-box"
                             ),
                         ],
-                        className='mini-boxes'
+                        className='mini-boxes',
+                        id='equivalent-mini-boxes'
                     ),
                 ],
-                className='container'
+                className='container',
 
             ),
         ],

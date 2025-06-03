@@ -82,13 +82,21 @@ methodo_content = get_methodology_blueprint(
 
 metrics = get_metrics_blueprint(
     id_prefix=AI_PAGE_ID_PREFIX,
+    embodied_carbon_footprint_details=metrics_layout.get_metric_per_form_layout(
+        training_id=f'{TRAINING_ID_PREFIX}-embodied_carbon_emissions',
+        inference_id=f'{INFERENCE_ID_PREFIX}-embodied_carbon_emissions',
+    ),
+    dynamic_carbon_footprint_details=metrics_layout.get_metric_per_form_layout(
+        training_id=f'{TRAINING_ID_PREFIX}-dynamic_carbon_emissions',
+        inference_id=f'{INFERENCE_ID_PREFIX}-dynamic_carbon_emissions',
+    ),
     energy_needed_details=metrics_layout.get_metric_per_form_layout(
         training_id=f'{TRAINING_ID_PREFIX}-energy_needed',
         inference_id=f'{INFERENCE_ID_PREFIX}-energy_needed',
     ),
-    carbon_footprint_details=metrics_layout.get_metric_per_form_layout(
-        training_id=f'{TRAINING_ID_PREFIX}-carbon_emissions',
-        inference_id=f'{INFERENCE_ID_PREFIX}-carbon_emissions',
+    abiotic_resources_details=metrics_layout.get_metric_per_form_layout(
+        training_id=f'{TRAINING_ID_PREFIX}-abiotic-resources',
+        inference_id=f'{INFERENCE_ID_PREFIX}-abiotic-resources',
     )
 )
 
@@ -791,20 +799,20 @@ def get_training_needed_energy(training_form_metrics):
     Output(f'{AI_PAGE_ID_PREFIX}-{INFERENCE_ID_PREFIX}-energy_needed', 'children'),
     Input('inference_processed_output_metrics', 'data'),
 )
-def get_training_needed_energy(inference_form_metrics):
+def get_inference_needed_energy(inference_form_metrics):
     return metrics_utils.format_energy_text(inference_form_metrics['energy_needed'])
 
 # Carbon emissions
 @AI_PAGE.callback(
-    Output(f'{AI_PAGE_ID_PREFIX}-{TRAINING_ID_PREFIX}-carbon_emissions', 'children'),
+    Output(f'{AI_PAGE_ID_PREFIX}-{TRAINING_ID_PREFIX}-dynamic_carbon_emissions', 'children'),
     Input('training_processed_output_metrics', 'data'),
 )
-def get_training_needed_energy(training_form_metrics):
+def get_training_CE(training_form_metrics):
     return metrics_utils.format_CE_text(training_form_metrics['carbonEmissions'])
 
 @AI_PAGE.callback(
-    Output(f'{AI_PAGE_ID_PREFIX}-{INFERENCE_ID_PREFIX}-carbon_emissions', 'children'),
+    Output(f'{AI_PAGE_ID_PREFIX}-{INFERENCE_ID_PREFIX}-dynamic_carbon_emissions', 'children'),
     Input('inference_processed_output_metrics', 'data'),
 )
-def get_training_needed_energy(inference_form_metrics):
+def get_inference_CE(inference_form_metrics):
     return metrics_utils.format_CE_text(inference_form_metrics['carbonEmissions'])

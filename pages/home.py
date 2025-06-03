@@ -88,53 +88,53 @@ def get_home_page_layout():
                     import_export.embed(HOME_PAGE),
 
                     metrics.embed(HOME_PAGE),
+                ],
+                className='super-section home-page-metrics'
+            ),
 
             #### DYNAMIC GRAPHS ####
         
+            html.Div(
+                [
                     html.Div(
                         [
-                            html.Div(
-                                [
-                                    html.H2("Computing cores VS Memory"),
+                            html.H2("Computing cores VS Memory"),
 
-                                    loading_wrapper(
-                                        dcc.Graph(
-                                            id="pie_graph",
-                                            className='graph-container pie-graph',
-                                            config={'displaylogo': False},
-                                            figure=BLANK_FIGURE,
-                                        )
-                                    ),
-                                ],
-                                className='one-of-two-graphs'
+                            loading_wrapper(
+                                dcc.Graph(
+                                    id="pie_graph",
+                                    className='graph-container pie-graph',
+                                    config={'displaylogo': False},
+                                    figure=BLANK_FIGURE,
+                                )
+                            ),
+                        ],
+                        className='one-of-two-graphs'
+                    ),
+
+                    html.Div(
+                        [
+                            html.H2(
+                                "How the location impacts your footprint"
                             ),
 
-                            html.Div(
-                                [
-                                    html.H2(
-                                        "How the location impacts your footprint"
-                                    ),
+                            loading_wrapper(
+                                dcc.Graph(
+                                    id="barPlotComparison",
+                                    className='graph-container',
+                                    config={'displaylogo': False},
+                                    figure=BLANK_FIGURE,
+                                    style={
+                                        'margin-top': '20px'
+                                    }
+                                ),
+                            ),
 
-                                    loading_wrapper(
-                                        dcc.Graph(
-                                            id="barPlotComparison",
-                                            className='graph-container',
-                                            config={'displaylogo': False},
-                                            figure=BLANK_FIGURE,
-                                            style={
-                                                'margin-top': '20px'
-                                            }
-                                        ),
-                                    ),
-
-                                ],
-                                className='one-of-two-graphs'
-                            )
                         ],
-                        className="container two-graphs-box"
-                    ),
+                        className='one-of-two-graphs'
+                    )
                 ],
-                className='super-section first-output'
+                className="container two-graphs-box"
             ),
             
             #### METHODOLOGY CONTENT ####

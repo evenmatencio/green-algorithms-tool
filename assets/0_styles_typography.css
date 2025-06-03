@@ -247,7 +247,7 @@ input, select, .Select, textarea {
 
 .metric-per-form-value {
     font-weight: 600;
-    font-size: 12px;
+    font-size: 1em;
     margin-right: 6px;
     margin-left: 2px;
 }

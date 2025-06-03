@@ -9,8 +9,9 @@ import blueprints.metrics.utils as utils
 
 def get_metrics_blueprint(
         id_prefix: str,
+        embodied_carbon_footprint_details: html.Div = html.Div(style={"display": "none"}),
+        dynamic_carbon_footprint_details: html.Div = html.Div(style={"display": "none"}),
         energy_needed_details: html.Div = html.Div(style={"display": "none"}),
-        carbon_footprint_details: html.Div = html.Div(style={"display": "none"}),
         abiotic_resources_details: html.Div = html.Div(style={"display": "none"}),
     ):
 
@@ -28,7 +29,8 @@ def get_metrics_blueprint(
     #################################
 
     results_blueprint.layout = get_green_algo_metrics_layout(
-            carbon_footprint_details,
+            embodied_carbon_footprint_details,
+            dynamic_carbon_footprint_details,
             energy_needed_details,
             abiotic_resources_details
         )

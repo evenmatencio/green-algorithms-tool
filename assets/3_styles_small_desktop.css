@@ -166,45 +166,47 @@
         font-size: 2.2rem;
     }    
 
-    .mini-box {
-        margin-right: 12px;
-        height: 170px;
-        padding-bottom: 25px;
-    }    
-
-    /* We target the extreme right mini-box(s) */
-    .mini-box:nth-of-type(3), .mini-box:nth-of-type(6) {
-        margin-right: 0;
-    }    
-
-    /* We target the top row of mini-box(s) */
-    .mini-box:nth-of-type(n-3) {
-        width: calc((33%) - (8px));
-        flex-direction: column;
-        height: 260px;
-    }  
-    
-    /* Still the top row, for AI view distribution between inference and training */
     .mini-box-main-content {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    } 
+    
+    /* AI PAGE */
+
+    .mini-boxes {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    /* We target the second row of mini-boxe(s) */
-    .mini-box:nth-of-type(n+3) {
-        width: calc((33%) - (8px));
+    #ai-equivalent-mini-boxes .mini-box {
+        width: calc((33%) - 6px);
+    }
+
+    .mini-box{
+        width: calc((50%) - 8px);
+        margin-right: 4px;
+        margin-left: 4px;
+    }
+
+    /* HOME PAGE */
+
+    .home-page-metrics .mini-boxes {
         flex-direction: column;
-        justify-content: center;
-        height: 260px;
-    }        
+    }
+
+    .home-page-metrics .mini-box{
+        width: 100%;
+    }
 
 
     /*
     ---------------------------------- FIRST OUTPUT ----------------------------------------
     */
 
-    .first-output {
+    .home-page-metrics {
         width:calc((66.6%) - (6px));
+        justify-content: start;
     }
 
     .two-graphs-box {
@@ -215,7 +217,6 @@
     .one-of-two-graphs:last-of-type {
         padding-right: 80px;
         padding-left: 80px;
-        /*margin-bottom: 0;*/
     }
 
 

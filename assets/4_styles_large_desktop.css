@@ -83,8 +83,14 @@
     ---------------------------------- MINI-BOX ----------------------------------------
     */
 
-    .mini-box:nth-of-type(n+4) {
-        height: 240px;
+    /* HOME PAGE */
+
+    .home-page-metrics .mini-boxes {
+        flex-direction: row;
+    }
+
+    .home-page-metrics .mini-box{
+        width: calc((50%) - 8px);
     }
 
     .training-metric {
