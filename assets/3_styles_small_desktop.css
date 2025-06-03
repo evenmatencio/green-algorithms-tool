@@ -171,16 +171,10 @@
         justify-content: center;
     } 
     
-    /* AI PAGE */
-
     .mini-boxes {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-    }
-
-    #ai-equivalent-mini-boxes .mini-box {
-        width: calc((33%) - 6px);
     }
 
     .mini-box{
@@ -189,15 +183,18 @@
         margin-left: 4px;
     }
 
-    /* HOME PAGE */
-
-    .home-page-metrics .mini-boxes {
-        flex-direction: column;
+    .equivalent {
+        flex-direction: row;
     }
 
-    .home-page-metrics .mini-box{
-        width: 100%;
+    .equivalent .mini-box {
+        padding-top: 10px;
+        width: calc((33%) - 8px);
     }
+    
+    .equivalent .mini-box-main-content {
+            flex-direction: column;
+        }
 
 
     /*

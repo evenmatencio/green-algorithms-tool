@@ -40,7 +40,7 @@ def get_green_algo_form_layout(
 
             #### FORM HEADER ####
 
-            html.H3(title),
+            html.H2(title),
             html.Center(subtitle),
 
             #### CONTINUOUS INFERENCE SCHEME ####

@@ -494,6 +494,8 @@ hr {
 .metrics-header {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    justify-content: center;
 }
 
 .mini-boxes{
@@ -509,9 +511,10 @@ hr {
     padding-bottom: 10px;
     border: black;
     border-style: dashed;
-    border-width: 1px;
+    border-width: 2px;
     box-shadow: 0px 0px 0px lightgrey;
 } 
+
 
 .mini-box-main-content {
     display: flex;
@@ -528,6 +531,34 @@ hr {
     margin-top: 12px;
 }
 
+.equivalent {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: -8px;
+    border: rgb(220, 220, 220);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 4px;
+}
+
+.equivalent > .mini-box{
+    border-width: 0px;
+}
+
+/* PLANETARY BOUNDARIES */
+
+/* Same as mini-box for for the planetary boudaries itemps */
+.PB-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border: black;
+    border-style: dashed;
+    border-width: 2px;
+    box-shadow: 0px 0px 0px lightgrey;
+}
+
 .style-icon {
     height: 100px;
     width: 100px;
@@ -542,6 +573,11 @@ hr {
     flex-direction: column;
 }
 
+.earth-icon {
+    margin-right: 16px;
+    margin-left: 16px;
+    margin-bottom: 11px;
+}
 
 /*
 ---------------------------------- TWO-GRAPHS BOX ----------------------------------------

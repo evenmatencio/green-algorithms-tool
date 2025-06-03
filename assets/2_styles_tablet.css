@@ -199,6 +199,17 @@
         justify-content: center;
     }
 
+    .equivalent .mini-box-main-content {
+        flex-direction: column;
+    }
+
+    .equivalent .mini-box {
+        padding-top: 10px;
+        width: calc((33%) - 8px);
+    }
+
+    .logo
+
     
     /*
     ---------------------------------- FIRST OUTPUT ----------------------------------------

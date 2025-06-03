@@ -38,7 +38,7 @@ def get_green_algo_metrics_layout(
                 [
                     html.Div(
                         [
-                            html.H3('Operational impacts'),
+                            html.H2('Operational impacts'),
 
                             html.Div(
                                 [
@@ -131,142 +131,10 @@ def get_green_algo_metrics_layout(
                                 className="container mini-box"
                             ),
                         ],
-                        className='mini-boxes',
-                    )
-                ],
-                className='container',
-            ),
-
-            ### MANUFACTURING IMPACTS ###
-
-            html.Div(
-                [
-                    html.Div(
-                        [
-                            html.H3('Embodied impacts'),
-
-                            html.Div(
-                                [
-                                    html.Div('i', className='tooltip-icon'),
-                                    html.P(
-                                        "Embodied impacts are genetared by the extraction and manufacturing " \
-                                        "phases of the hardaware life cycle.",
-                                        className='tooltip-text'
-                                    ),
-                                ],
-                                className='tooltip',
-                            ),
-                        ],
-                        className='metrics-header'
+                        className='mini-boxes metrics',
                     ),
 
-                    html.Div(
-                        [
-                            #### CARBON EMISSIONS ####
-                            
-                            html.Div(
-                                [
-                                    html.Div(
-                                        [
-
-                                            html.Img(
-                                                src=os.path.join(image_dir, 'logo_co2.svg'),
-                                                id="logo_co2",
-                                                className="style-icon",
-                                                style={
-                                                    'margin-top': '-7px',
-                                                    'margin-bottom': '7px'
-                                                },
-                                            ),
-
-                                            html.Div(
-                                                [
-                                                    loading_wrapper(html.Div(
-                                                        "XX gCO2e",
-                                                        id="embodied_carbonEmissions_text",
-                                                    )),
-
-                                                    html.P(
-                                                        "Carbon footprint",
-                                                    )
-                                                ],
-                                                className='caption-icons'
-                                            ),
-                                        ],
-                                        className='mini-box-main-content'
-
-                                    ),
-
-                                    embodied_carbon_footprint_details,
-                                ],
-                                className="container mini-box"
-                            ),
-                                
-                            #### ABIOTIC RESOURCES DEPLETION ####
-
-                            html.Div(
-                                [
-                                    html.Div(
-                                        [
-                                            html.Img(
-                                                src=os.path.join(image_dir, 'logo_pickaxe_1.svg'),
-                                                id="logo_pickaxe",
-                                                className="style-icon",
-                                                style={
-                                                    'margin-top': '-7px',
-                                                    'padding': '15px'
-                                                },
-                                            ),
-
-                                            html.Div(
-                                                [
-                                                    loading_wrapper(html.Div(
-                                                        "XX kgSb eq",
-                                                        id="abiotic_text",
-                                                    )),
-
-                                                    html.P(
-                                                        "Abiotic resources depletion",
-                                                    )
-                                                ],
-                                                className='caption-icons'
-                                            ),
-                                        ],
-                                        className='mini-box-main-content'
-                                    ),
-                                    
-                                    abiotic_resources_details,
-                                ],
-                                className="container mini-box"
-                            ),
-                        ],
-                        className='mini-boxes'
-                    ),
-                ],
-                className='container'
-            ),
-            
-            ### EQUIVALENTS ###
-
-            html.Div(
-                [
-                    html.Div(
-                        [
-                            html.H3('Some equivalents'),
-
-                            html.Div(
-                                [
-                                    html.Div('i', className='tooltip-icon'),
-                                    html.P(
-                                        "Currently: dynamic carbon footprint equivalents.",
-                                        className='tooltip-text'
-                                    ),
-                                ],
-                                className='tooltip',
-                            ),
-                        ],
-                        className='metrics-header'
-                    ),
+                    ### USAGE EQUIVALENTS ###
 
                     html.Div(
                         [
@@ -377,13 +245,193 @@ def get_green_algo_metrics_layout(
                                 className="container mini-box"
                             ),
                         ],
-                        className='mini-boxes',
+                        className='mini-boxes equivalent',
                         id='equivalent-mini-boxes'
                     ),
                 ],
                 className='container',
-
             ),
+
+            ### MANUFACTURING IMPACTS ###
+
+            html.Div(
+                [
+                    html.Div(
+                        [
+                            html.H2('Embodied impacts'),
+
+
+                            html.Div(
+                                [
+                                    html.Div('i', className='tooltip-icon'),
+                                    html.P(
+                                        "Embodied impacts are genetared by the extraction and manufacturing " \
+                                        "phases of the hardaware life cycle.",
+                                        className='tooltip-text'
+                                    ),
+                                ],
+                                className='tooltip',
+                            ),
+                        ],
+                        className='metrics-header'
+                    ),
+
+                    html.P(
+                        'Attributed to the computation task',
+                        style={
+                            'font-style': 'italic',
+                            'margin-bottom': '10px',
+                        }
+                    ),
+
+                    html.Div(
+                        [
+                            #### CARBON EMISSIONS ####
+                            
+                            html.Div(
+                                [
+                                    html.Div(
+                                        [
+
+                                            html.Img(
+                                                src=os.path.join(image_dir, 'logo_co2.svg'),
+                                                id="logo_co2",
+                                                className="style-icon",
+                                                style={
+                                                    'margin-top': '-7px',
+                                                    'margin-bottom': '7px'
+                                                },
+                                            ),
+
+                                            html.Div(
+                                                [
+                                                    loading_wrapper(html.Div(
+                                                        "XX gCO2e",
+                                                        id="embodied_carbonEmissions_text",
+                                                    )),
+
+                                                    html.P(
+                                                        "Carbon footprint",
+                                                    )
+                                                ],
+                                                className='caption-icons'
+                                            ),
+                                        ],
+                                        className='mini-box-main-content'
+
+                                    ),
+
+                                    embodied_carbon_footprint_details,
+                                ],
+                                className="container mini-box"
+                            ),
+                                
+                            #### ABIOTIC RESOURCES DEPLETION ####
+
+                            html.Div(
+                                [
+                                    html.Div(
+                                        [
+                                            html.Img(
+                                                src=os.path.join(image_dir, 'logo_pickaxe_1.svg'),
+                                                id="logo_pickaxe",
+                                                className="style-icon",
+                                                style={
+                                                    'margin-top': '-7px',
+                                                    'padding': '15px'
+                                                },
+                                            ),
+
+                                            html.Div(
+                                                [
+                                                    loading_wrapper(html.Div(
+                                                        "XX kgSb eq",
+                                                        id="abiotic_text",
+                                                    )),
+
+                                                    html.P(
+                                                        "Abiotic resources depletion",
+                                                    )
+                                                ],
+                                                className='caption-icons'
+                                            ),
+                                        ],
+                                        className='mini-box-main-content'
+                                    ),
+                                    
+                                    abiotic_resources_details,
+                                ],
+                                className="container mini-box"
+                            ),
+                        ],
+                        className='mini-boxes'
+                    ),
+
+                ],
+                className='container'
+            ),
+
+            #### PLANETARY BOUNDARIES ####
+
+            html.Div(
+                [
+                    html.Div(
+                        [
+
+                            html.H2('🌎', className='earth-icon'),
+
+                            html.H2('Planetary boundaries'),
+
+                            html.Div(
+                                [
+                                    html.Div('i', className='tooltip-icon'),
+                                    html.P(
+                                        "This section provides comparions between the computed footprints " \
+                                        "and the planetary boundaries for these impacts.",
+                                        className='tooltip-text'
+                                    ),
+                                ],
+                                className='tooltip',
+                            ),
+
+                            html.H2('🌎', className='earth-icon'),
+                        ],
+                        className='metrics-header'
+                    ),
+
+                    html.Div(
+                        [
+                            html.Div(
+                                [
+                                    html.B("Global warming potential"),
+
+                                    loading_wrapper(html.Div(
+                                        "XX",
+                                        id="carbon_footprint_PB",
+                                    )),
+
+                                ],
+                                className='container PB-item'
+                            ),
+
+                            html.Div(
+                                [
+                                    html.B("Abiotic depletion potential"),
+
+                                    loading_wrapper(html.Div(
+                                        "XX",
+                                        id="ADP_PB",
+                                    )),
+
+                                ],
+                                className='container PB-item'
+                            )
+                        ],
+                        className='mini-boxes'
+                    ),
+                ],
+                className='container'
+            )
         ],
         className='super-section metrics'
     )

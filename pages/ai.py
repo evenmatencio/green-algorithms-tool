@@ -149,7 +149,7 @@ def get_ai_page_layout():
 
                     html.Div(
                         [
-                            html.H3("Reporting period"),
+                            html.H2("Reporting period"),
 
                             html.P(
                                 [
@@ -195,18 +195,6 @@ def get_ai_page_layout():
                                         ],
                                         className='box-fields'
                                     ),
-
-                                    # I don't think a tooltip is needed there
-                                    # html.Div(
-                                    #     [
-                                    #         html.Div('i', className='tooltip-icon'),
-                                    #         html.P(
-                                    #             "Fill in your reporting period.",
-                                    #             className='tooltip-text'
-                                    #         ),
-                                    #     ],
-                                    #     className='tooltip',
-                                    # ),
                                 ],
                                 className="reporting-row short-input"
                             ),
@@ -223,7 +211,7 @@ def get_ai_page_layout():
 
                     dmc.Tabs(
                         [
-                            html.H3('TRAINING'),
+                            html.H2('Training'),
 
                             dmc.TabsList(
                                 [
@@ -257,7 +245,7 @@ def get_ai_page_layout():
 
                     dmc.Tabs(
                         [
-                            html.H3('INFERENCE'),
+                            html.H2('Inference'),
 
                             dmc.TabsList(
                                 [
