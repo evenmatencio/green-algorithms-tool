@@ -382,21 +382,18 @@ def get_green_algo_metrics_layout(
 
                             html.H2('Planetary boundaries'),
 
-                            html.Div(
-                                [
-                                    html.Div('i', className='tooltip-icon'),
-                                    html.P(
-                                        "This section provides comparions between the computed footprints " \
-                                        "and the planetary boundaries for these impacts.",
-                                        className='tooltip-text'
-                                    ),
-                                ],
-                                className='tooltip',
-                            ),
-
                             html.H2('🌎', className='earth-icon'),
                         ],
                         className='metrics-header'
+                    ),
+
+                    html.P(
+                        'Comparions between the computed footprints ' \
+                        'and the planetary boundaries for these impacts',
+                        style={
+                            'font-style': 'italic',
+                            'margin-bottom': '10px',
+                        }
                     ),
 
                     html.Div(
