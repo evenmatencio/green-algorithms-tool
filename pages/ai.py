@@ -82,9 +82,9 @@ methodo_content = get_methodology_blueprint(
 
 metrics = get_metrics_blueprint(
     id_prefix=AI_PAGE_ID_PREFIX,
-    embodied_carbon_footprint_details=metrics_layout.get_metric_per_form_layout(
-        training_id=f'{TRAINING_ID_PREFIX}-embodied_carbon_emissions',
-        inference_id=f'{INFERENCE_ID_PREFIX}-embodied_carbon_emissions',
+    manufacturing_carbon_footprint_details=metrics_layout.get_metric_per_form_layout(
+        training_id=f'{TRAINING_ID_PREFIX}-manufacturing_carbon_emissions',
+        inference_id=f'{INFERENCE_ID_PREFIX}-manufacturing_carbon_emissions',
     ),
     dynamic_carbon_footprint_details=metrics_layout.get_metric_per_form_layout(
         training_id=f'{TRAINING_ID_PREFIX}-dynamic_carbon_emissions',
@@ -94,9 +94,9 @@ metrics = get_metrics_blueprint(
         training_id=f'{TRAINING_ID_PREFIX}-energy_needed',
         inference_id=f'{INFERENCE_ID_PREFIX}-energy_needed',
     ),
-    abiotic_resources_details=metrics_layout.get_metric_per_form_layout(
-        training_id=f'{TRAINING_ID_PREFIX}-abiotic-resources',
-        inference_id=f'{INFERENCE_ID_PREFIX}-abiotic-resources',
+    manufacturing_abiotic_resources_details=metrics_layout.get_metric_per_form_layout(
+        training_id=f'{TRAINING_ID_PREFIX}-manufacturing_abiotic-resources',
+        inference_id=f'{INFERENCE_ID_PREFIX}-manufacturing_abiotic-resources',
     )
 )
 

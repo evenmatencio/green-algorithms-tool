@@ -21,10 +21,10 @@ image_dir = os.path.join('assets/images')
 
 
 def get_green_algo_metrics_layout(
-        embodied_carbon_footprint_details: html.Div,
+        manufacturing_carbon_footprint_details: html.Div,
         dynamic_carbon_footprint_details: html.Div,
         energy_needed_details: html.Div,
-        abiotic_resources_details: html.Div,
+        manufacturing_abiotic_resources_details: html.Div,
 ):
     return html.Div(
         [
@@ -258,14 +258,14 @@ def get_green_algo_metrics_layout(
                 [
                     html.Div(
                         [
-                            html.H2('Embodied impacts'),
+                            html.H2('Manufacturing impacts'),
 
 
                             html.Div(
                                 [
                                     html.Div('i', className='tooltip-icon'),
                                     html.P(
-                                        "Embodied impacts are genetared by the extraction and manufacturing " \
+                                        "Manufacturing impacts are genetared by the extraction and manufacturing " \
                                         "phases of the hardaware life cycle.",
                                         className='tooltip-text'
                                     ),
@@ -307,7 +307,7 @@ def get_green_algo_metrics_layout(
                                                 [
                                                     loading_wrapper(html.Div(
                                                         "XX gCO2e",
-                                                        id="embodied_carbonEmissions_text",
+                                                        id="manufacturing_carbonEmissions_text",
                                                     )),
 
                                                     html.P(
@@ -321,7 +321,7 @@ def get_green_algo_metrics_layout(
 
                                     ),
 
-                                    embodied_carbon_footprint_details,
+                                    manufacturing_carbon_footprint_details,
                                 ],
                                 className="container mini-box"
                             ),
@@ -346,7 +346,7 @@ def get_green_algo_metrics_layout(
                                                 [
                                                     loading_wrapper(html.Div(
                                                         "XX kgSb eq",
-                                                        id="abiotic_text",
+                                                        id="manufacturing_abiotic_text",
                                                     )),
 
                                                     html.P(
@@ -359,7 +359,7 @@ def get_green_algo_metrics_layout(
                                         className='mini-box-main-content'
                                     ),
                                     
-                                    abiotic_resources_details,
+                                    manufacturing_abiotic_resources_details,
                                 ],
                                 className="container mini-box"
                             ),
